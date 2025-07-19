@@ -1,0 +1,22 @@
+name: Run Tidy Tuesday Analysis
+
+on:
+  workflow_dispatch:
+
+jobs:
+  analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+      - name: Install packages
+        run: Rscript -e 'install.packages("tidyverse")'
+      - name: Run week 01 analysis
+        run: Rscript week-01/analysis.R
+      - name: Upload plots
+        uses: actions/upload-artifact@v3
+        with:
+          name: week-01-plots
+          path: week-01/plots/
