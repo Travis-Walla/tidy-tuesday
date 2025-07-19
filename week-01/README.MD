@@ -1,1 +1,3 @@
-# Week 01/nThis folder will contain Tidy Tuesday Analysis and Models 
+# Week 01
+
+This folder will contain Tidy Tuesday analyses and models
